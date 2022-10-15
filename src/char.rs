@@ -60,6 +60,7 @@ pub fn random_char_with(str: &str) -> String {
 /// - Alpha 大小写字符
 /// - Alphanumeric 大小写字符和数字
 /// - All 大小写字符，数字和特殊字符
+#[derive(Clone, Copy)]
 pub enum CharType {
     /// 小写字符
     Lower,
@@ -84,7 +85,7 @@ pub enum CharType {
 /// * `types`: 类型 `CharType`
 ///
 /// returns: char 字符
-fn random_char_bytes(types: CharType) -> char {
+pub fn random_char_bytes(types: CharType) -> char {
     let lower = "abcdefghijklmnopqrstuvwxyz";
     let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let number = "0123456789";

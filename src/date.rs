@@ -4,13 +4,13 @@ To generate a random date.
  */
 use rand::Rng;
 
-fn year() -> String {
+fn random_year() -> String {
     let mut rng = rand::thread_rng();
     let range = 1970..2099;
     rng.gen_range(range).to_string()
 }
 
-fn month() -> String {
+fn random_month() -> String {
     let range = 1..=12;
     let mut rng = rand::thread_rng();
     rng.gen_range(range).to_string()
@@ -26,7 +26,7 @@ fn is_leap_year(year: u16) -> bool {
     false
 }
 
-fn day(date: Option<(u16, u8)>) -> String {
+fn random_day(date: Option<(u16, u8)>) -> String {
     let end = match date {
         Some(date) => {
             let (year, month) = date;
@@ -65,38 +65,47 @@ pub enum DateType {
     /// 年月日
     Date,
 }
+pub fn random_date_simple(date_type: DateType) -> String {
+    random_date_sep(date_type, None)
+}
+
+fn random_date_sep(date_type: DateType, sep: Option<&str>) -> String {
+    let sep = sep.unwrap_or("");
+    match date_type {
+        DateType::Year => random_year(),
+        DateType::Month => random_month(),
+        DateType::Day => random_day(None),
+        DateType::YearMonth => {
+            let year = random_year();
+            let month = random_month();
+            format!("{}{sep}{:0>2}", year, month)
+        }
+        DateType::MonthDay => {
+            let year = random_year().parse().unwrap();
+            let month = random_month().parse().unwrap();
+            let day = random_day(Some((year, month)));
+            format!("{:0>2}{sep}{:0>2}", month, day)
+        }
+        DateType::Date => {
+            let year = random_year().parse().unwrap();
+            let month = random_month().parse().unwrap();
+            let day = random_day(Some((year, month)));
+            format!("{}{sep}{:0>2}{sep}{:0>2}", year, month, day)
+        }
+    }
+}
+
 /// Generate a random date by type.
 /// 根据类型生成一个随机日期
 ///
 /// # Examples 示例
 /// ```
-/// use mock::date::{date, DateType};
-/// let d = date(DateType::Date);
+/// use mock::date::{random_date, DateType};
+/// let d = random_date(DateType::Date);
 /// println!("{}", d);
 /// ```
-pub fn date(date_type: DateType) -> String {
-    match date_type {
-        DateType::Year => year(),
-        DateType::Month => month(),
-        DateType::Day => day(None),
-        DateType::YearMonth => {
-            let year = year();
-            let month = month();
-            format!("{}-{:0>2}", year, month)
-        }
-        DateType::MonthDay => {
-            let year = year().parse().unwrap();
-            let month = month().parse().unwrap();
-            let day = day(Some((year, month)));
-            format!("{:0>2}-{:0>2}", month, day)
-        }
-        DateType::Date => {
-            let year = year().parse().unwrap();
-            let month = month().parse().unwrap();
-            let day = day(Some((year, month)));
-            format!("{}-{:0>2}-{:0>2}", year, month, day)
-        }
-    }
+pub fn random_date(date_type: DateType) -> String {
+    random_date_sep(date_type, Some("-"))
 }
 
 /**
@@ -130,23 +139,28 @@ pub enum TimeType {
 /// # Examples 示例
 ///
 /// ```
-/// use mock::date::{time, TimeType};
-/// let t = time(TimeType::Time);
+/// use mock::date::{random_time, TimeType};
+/// let t = random_time(TimeType::Time);
 /// println!("{}",t);
 /// ```
-pub fn time(time_type: TimeType) -> String {
+pub fn random_time(time_type: TimeType) -> String {
     match time_type {
-        TimeType::Hour => hour().to_string(),
-        TimeType::Minute => minute().to_string(),
-        TimeType::Second => second().to_string(),
+        TimeType::Hour => random_hour().to_string(),
+        TimeType::Minute => random_minute().to_string(),
+        TimeType::Second => random_second().to_string(),
         TimeType::HourMinute => {
-            format!("{:0>2}:{:0>2}", hour(), minute())
+            format!("{:0>2}:{:0>2}", random_hour(), random_minute())
         }
         TimeType::MinuteSecond => {
-            format!("{:0>2}:{:0>2}", minute(), second())
+            format!("{:0>2}:{:0>2}", random_minute(), random_second())
         }
         TimeType::Time => {
-            format!("{:0>2}:{:0>2}:{:0>2}", hour(), minute(), second())
+            format!(
+                "{:0>2}:{:0>2}:{:0>2}",
+                random_hour(),
+                random_minute(),
+                random_second()
+            )
         }
     }
 }
@@ -158,14 +172,14 @@ where
     rand::thread_rng().gen_range(min..=max)
 }
 
-fn hour() -> u8 {
+fn random_hour() -> u8 {
     random_integer_range(0, 24)
 }
 
-fn minute() -> u8 {
+fn random_minute() -> u8 {
     random_integer_range(0, 60)
 }
 
-fn second() -> u8 {
+fn random_second() -> u8 {
     random_integer_range(0, 60)
 }
