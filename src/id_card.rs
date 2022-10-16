@@ -1,4 +1,4 @@
-use crate::base::random_string;
+use crate::base::random_string_by_len;
 use crate::char::CharType;
 use crate::date::{random_date_simple, DateType};
 
@@ -16,7 +16,7 @@ use crate::date::{random_date_simple, DateType};
 pub fn random_id_card() -> String {
     let prefix = "111111";
     let date = random_date_simple(DateType::Date);
-    let third = random_string(CharType::Number, 3);
+    let third = random_string_by_len(CharType::Number, 3);
     println!("third: {}", third);
     let other = format!("{}{}{}", prefix, date, third);
     let last = calc_code(&other);
