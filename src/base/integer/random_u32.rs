@@ -5,7 +5,7 @@ use crate::base::integer;
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_u32_simple;
+/// use mock4rs::base::random_u32_simple;
 /// let u = random_u32_simple();
 /// println!("u:{}",u);
 /// ```
@@ -24,7 +24,7 @@ pub fn random_u32_simple() -> u32 {
 /// # Examples
 ///
 /// ```
-/// use mock::base::random_u32_max;
+/// use mock4rs::base::random_u32_max;
 /// let u = random_u32_max(30);
 /// println!("u:{}",u);
 /// ```
@@ -43,7 +43,7 @@ pub fn random_u32_max(max: u32) -> u32 {
 /// # Examples
 ///
 /// ```
-/// use mock::base::random_u32_min;
+/// use mock4rs::base::random_u32_min;
 /// let u = random_u32_min(5);
 /// println!("u:{}",u);
 /// ```
@@ -64,7 +64,7 @@ pub fn random_u32_min(min: u32) -> u32 {
 /// # Examples
 ///
 /// ```
-/// use mock::base::random_u32;
+/// use mock4rs::base::random_u32;
 /// let u = random_u32(10,50);
 /// println!("u:{}", u);
 /// ```

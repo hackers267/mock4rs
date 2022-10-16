@@ -4,7 +4,7 @@ use crate::base::integer;
 /// 随机生成一个i32类型的值
 ///
 /// ```
-/// use mock::base::random_i32_simple;
+/// use mock4rs::base::random_i32_simple;
 /// let  i = random_i32_simple();
 /// println!("i:{}", i);
 /// ```
@@ -23,7 +23,7 @@ pub fn random_i32_simple() -> i32 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i32_max;
+/// use mock4rs::base::random_i32_max;
 /// let  i = random_i32_max(100);
 /// println!("i: {}", i);
 /// ```
@@ -42,7 +42,7 @@ pub fn random_i32_max(max: i32) -> i32 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i32_min;
+/// use mock4rs::base::random_i32_min;
 /// let  i = random_i32_min(100);
 /// println!("i: {}", i);
 /// ```
@@ -62,7 +62,7 @@ pub fn random_i32_min(min: i32) -> i32 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i32;
+/// use mock4rs::base::random_i32;
 /// let  i = random_i32(100,200);
 /// println!("i: {}", i);
 /// ```

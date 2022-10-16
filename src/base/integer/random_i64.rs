@@ -5,7 +5,7 @@ use crate::base::integer;
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i64_simple;
+/// use mock4rs::base::random_i64_simple;
 /// let  i = random_i64_simple();
 /// println!("i:{}", i);
 /// ```
@@ -24,7 +24,7 @@ pub fn random_i64_simple() -> i64 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i64_max;
+/// use mock4rs::base::random_i64_max;
 /// let  i = random_i64_max(100);
 /// println!("i: {}", i);
 /// ```
@@ -43,7 +43,7 @@ pub fn random_i64_max(max: i64) -> i64 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i64_min;
+/// use mock4rs::base::random_i64_min;
 /// let  i = random_i64_min(100);
 /// println!("i: {}", i);
 /// ```
@@ -63,7 +63,7 @@ pub fn random_i64_min(min: i64) -> i64 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i64;
+/// use mock4rs::base::random_i64;
 /// let  i = random_i64(100,200);
 /// println!("i: {}", i);
 /// ```

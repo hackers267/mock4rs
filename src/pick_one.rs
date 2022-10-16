@@ -1,5 +1,14 @@
 use rand::Rng;
 
+/// To pick a random element from a list.
+/// 从一个列表中随机挑选出一个元素
+///
+/// # Arguments
+///
+/// - list: 实现了`Copy` trait 的列表
+///
+/// returns 列表中的一个元素
+///
 pub fn pick_one<T>(list: &[T]) -> T
 where
     T: Copy,

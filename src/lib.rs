@@ -1,7 +1,7 @@
 /*!
- The `mock` library is  a library that provides a set of methods that provides data.
+ The `mock4rs` library is  a library that provides a set of methods that provides data.
 
- `mock` 库提供了一系列的生成指定数据的方法。
+ `mock4rs` 库提供了一系列的生成指定数据的方法。
 */
 pub mod base;
 pub mod char;

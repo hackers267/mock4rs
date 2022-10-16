@@ -6,7 +6,7 @@ use crate::base::integer;
 /// # Examples 示例
 ///
 /// ```
-/// use mock::base::random_u8_simple;
+/// use mock4rs::base::random_u8_simple;
 /// let u = random_u8_simple();
 /// println!("u: {}",u);
 /// ```
@@ -20,7 +20,7 @@ pub fn random_u8_simple() -> u8 {
 /// # Example 示例
 ///
 /// ```
-/// use mock::base::random_u8_min;
+/// use mock4rs::base::random_u8_min;
 /// let u = random_u8_min(0);
 /// println!("u : {}",u);
 /// ```
@@ -34,7 +34,7 @@ pub fn random_u8_min(min: u8) -> u8 {
 /// # Example 示例
 ///
 /// ```
-/// use mock::base::random_u8_max;
+/// use mock4rs::base::random_u8_max;
 /// let u = random_u8_max(64);
 /// println!("u:{}",u);
 /// ```
@@ -44,6 +44,21 @@ pub fn random_u8_max(max: u8) -> u8 {
 
 /// Generate a random u8 based on the given min and max values.
 /// 根据指定的最小值和最大值生成一个u8值
+///
+/// # Arguments
+///
+/// - `min`: 指定的最小值
+/// - `max`: 指定的最大值
+///
+/// returns 随机值
+///
+/// # Example 示例
+///
+/// ```
+/// use mock4rs::base::random_u8;
+/// let  u = random_u8(20,50);
+/// println!("u:{}", u);
+/// ```
 pub fn random_u8(min: u8, max: u8) -> u8 {
     integer::random_integer(min, max)
 }

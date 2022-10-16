@@ -5,7 +5,7 @@ use crate::base::integer;
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i16_simple;
+/// use mock4rs::base::random_i16_simple;
 /// let  i = random_i16_simple();
 /// println!("i:{}", i);
 /// ```
@@ -24,7 +24,7 @@ pub fn random_i16_simple() -> i16 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i16_max;
+/// use mock4rs::base::random_i16_max;
 /// let  i = random_i16_max(100);
 /// println!("i: {}", i);
 /// ```
@@ -43,7 +43,7 @@ pub fn random_i16_max(max: i16) -> i16 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i16_min;
+/// use mock4rs::base::random_i16_min;
 /// let  i = random_i16_min(100);
 /// println!("i: {}", i);
 /// ```
@@ -64,7 +64,7 @@ pub fn random_i16_min(min: i16) -> i16 {
 /// # Example 示例
 ///
 /// ```
-/// use mock::base::random_i16;
+/// use mock4rs::base::random_i16;
 /// let  i = random_i16(100,200);
 /// println!("i: {}", i);
 /// ```

@@ -5,7 +5,7 @@ use crate::base::integer;
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_u128_simple;
+/// use mock4rs::base::random_u128_simple;
 /// let u = random_u128_simple();
 /// println!("u:{}",u);
 /// ```
@@ -24,7 +24,7 @@ pub fn random_u128_simple() -> u128 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_u128_max;
+/// use mock4rs::base::random_u128_max;
 /// let u = random_u128_max(100);
 /// println!("u:{}",u);
 /// ```
@@ -43,7 +43,7 @@ pub fn random_u128_max(max: u128) -> u128 {
 ///
 /// # Examples 示例
 /// ```
-/// use mock::base::random_u128_min;
+/// use mock4rs::base::random_u128_min;
 /// let u = random_u128_min(100);
 /// println!("u:{}",u);
 /// ```
@@ -63,7 +63,7 @@ pub fn random_u128_min(min: u128) -> u128 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_u128;
+/// use mock4rs::base::random_u128;
 /// let u = random_u128(100,200);
 /// println!("u:{}",u);
 /// ```

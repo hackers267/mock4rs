@@ -100,7 +100,7 @@ fn random_date_sep(date_type: DateType, sep: Option<&str>) -> String {
 ///
 /// # Examples 示例
 /// ```
-/// use mock::date::{random_date, DateType};
+/// use mock4rs::date::{DateType, random_date};
 /// let d = random_date(DateType::Date);
 /// println!("{}", d);
 /// ```
@@ -139,7 +139,7 @@ pub enum TimeType {
 /// # Examples 示例
 ///
 /// ```
-/// use mock::date::{random_time, TimeType};
+/// use mock4rs::date::{random_time, TimeType};
 /// let t = random_time(TimeType::Time);
 /// println!("{}",t);
 /// ```

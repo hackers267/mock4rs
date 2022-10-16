@@ -15,7 +15,7 @@ use crate::pick_one;
 /// # Examples 示例
 ///
 /// ```
-/// use mock::char::random_number;
+/// use mock4rs::char::random_number;
 /// let n = random_number();
 /// let range = 0..=9;
 /// let list:Vec<String> = range.map(|x|x.to_string()).collect();

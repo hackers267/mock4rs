@@ -5,7 +5,7 @@ use crate::base::integer;
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i8_simple;
+/// use mock4rs::base::random_i8_simple;
 /// let  u = random_i8_simple();
 /// println!("u:{}", u);
 /// ```
@@ -24,7 +24,7 @@ pub fn random_i8_simple() -> i8 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i8_max;
+/// use mock4rs::base::random_i8_max;
 /// let i = random_i8_max(100);
 /// println!("i: {}", i);
 /// ```
@@ -43,7 +43,7 @@ pub fn random_i8_max(max: i8) -> i8 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i8_min;
+/// use mock4rs::base::random_i8_min;
 /// let  i = random_i8_min(100);
 /// println!("i:{}",i)
 /// ```
@@ -63,7 +63,7 @@ pub fn random_i8_min(min: i8) -> i8 {
 ///
 /// # Example 示例
 /// ```
-/// use mock::base::random_i8;
+/// use mock4rs::base::random_i8;
 /// let  i = random_i8(50,100);
 /// println!("i:{}",i)
 /// ```

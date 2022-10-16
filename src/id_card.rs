@@ -9,7 +9,7 @@ use crate::date::{random_date_simple, DateType};
 /// # Example 示例
 ///
 /// ```
-///  use mock::random_id_card;
+///  use mock4rs::random_id_card;
 ///  let id_card = random_id_card();
 ///  println!("id_card: {}", id_card);
 ///  ```
@@ -23,6 +23,7 @@ pub fn random_id_card() -> String {
     format!("{}{}{}{}", prefix, date, third, last)
 }
 
+/// 计算身份证的校验位
 fn calc_code(str: &str) -> char {
     let left = str
         .split("")
