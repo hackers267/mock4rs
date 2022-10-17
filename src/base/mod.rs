@@ -1,8 +1,24 @@
 //! base function.
 //! 基本功能函数
+mod float;
 mod integer;
 mod string;
 
+use rand::distributions::uniform::SampleUniform;
+use rand::Rng;
+fn random_range<T>(min: T, max: T) -> T
+where
+    T: PartialOrd + SampleUniform,
+{
+    let range = min..max;
+    let mut rng = rand::thread_rng();
+    rng.gen_range(range)
+}
+
+pub use float::{
+    random_f32, random_f32_max, random_f32_min, random_f32_simple, random_f64, random_f64_max,
+    random_f64_min, random_f64_simple,
+};
 pub use integer::{
     random_i128, random_i128_max, random_i128_min, random_i128_simple, random_i16, random_i16_max,
     random_i16_min, random_i16_simple, random_i32, random_i32_max, random_i32_min,
