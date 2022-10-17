@@ -1,7 +1,18 @@
+//! Generates a random phone number.
+//! 随机生成一个手机号码。
 use crate::char::random_number;
 use crate::pick_one;
 
-pub fn phone() -> String {
+/// Generates a random phone number.
+/// 随机生成一个手机号码
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::random_phone;
+/// let  phone = random_phone();
+/// println!("phone: {}", phone);
+/// ```
+pub fn random_phone() -> String {
     let prefixes = [
         "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "151", "152", "186",
         "182",
@@ -22,7 +33,7 @@ mod tests {
 
     #[test]
     fn test_phone() {
-        let result = phone();
+        let result = random_phone();
         let len = result.len();
         assert_eq!(len, 11);
     }

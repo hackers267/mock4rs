@@ -65,6 +65,21 @@ pub enum DateType {
     /// 年月日
     Date,
 }
+/// Generate a random date based on the given date_type.
+/// 根据指定的类型生成一个随机日期
+///
+/// # Arguments
+///
+/// - `date_type`: `DateType` 日期类型
+///
+/// returns String
+///
+/// # Example 示例
+/// ```rust
+/// use mock4rs::date::{DateType, random_date_simple};
+/// let  date_simple = random_date_simple(DateType::Date);
+/// println!("date_simple: {}", date_simple);
+/// ```
 pub fn random_date_simple(date_type: DateType) -> String {
     random_date_sep(date_type, None)
 }

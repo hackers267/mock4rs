@@ -14,4 +14,4 @@ mod pick_one;
 use crate::pick_one::pick_one;
 
 pub use crate::id_card::random_id_card;
-pub use crate::phone::phone;
+pub use crate::phone::random_phone;
