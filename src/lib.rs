@@ -3,6 +3,7 @@
 
  `mock4rs` 库提供了一系列的生成指定数据的方法。
 */
+#![warn(missing_docs)]
 pub mod base;
 pub mod char;
 pub mod date;

@@ -26,26 +26,86 @@ pub fn random_number() -> String {
     random_char_bytes(CharType::Number).to_string()
 }
 
+/// Get the random lower letter character.
+/// 随机生成一个小写字符
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::char::random_lower_char;
+/// let  lower_char = random_lower_char();
+/// println!("lower_char: {}", lower_char)
+/// ```
 pub fn random_lower_char() -> String {
     random_char_bytes(CharType::Lower).to_string()
 }
 
+/// Get the random letter upper character.
+/// 随机生成一个大写字符
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::char::random_upper_char;
+/// let  upper_char = random_upper_char();
+/// println!("upper_char: {}", upper_char)
+/// ```
 pub fn random_upper_char() -> String {
     random_char_bytes(CharType::Upper).to_string()
 }
 
+/// Get the random alpha letter character.
+/// 随机生成一个大小写字符
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::char::random_alpha_char;
+/// let  alpha_char = random_alpha_char();
+/// println!("alpha_char: {}", alpha_char)
+/// ```
 pub fn random_alpha_char() -> String {
     random_char_bytes(CharType::Alpha).to_string()
 }
 
+/// Get the random alphanumeric character.
+/// 随机生成一个大小写字符或数字字符
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::char::random_alphanumeric_char;
+/// let  alphanumeric_char = random_alphanumeric_char();
+/// print!("alphanumeric_char: {}", alphanumeric_char);
+/// ```
 pub fn random_alphanumeric_char() -> String {
     random_char_bytes(CharType::Alphanumeric).to_string()
 }
 
+/// Get the random character.
+/// 随机生成一个字符
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::char::random_char;
+/// let  string = random_char();
+/// println!("string: {}", string);
+/// ```
 pub fn random_char() -> String {
     random_char_bytes(CharType::All).to_string()
 }
 
+/// Get the random character based on the given string.
+/// 从指定的字符切片中随机取出一个字符
+///
+/// # Arguments
+///
+/// - `str`: 指定的字符切片
+///
+/// returns String
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::char::random_char_with;
+/// let  string = random_char_with("hello");
+/// println!("string: {}", string);
+/// ```
 pub fn random_char_with(str: &str) -> String {
     let list = str.chars().collect::<Vec<char>>();
     pick_one(&list).to_string()
