@@ -7,6 +7,7 @@
 #![deny(rustdoc::missing_doc_code_examples)]
 pub mod base;
 pub mod char;
+mod color;
 pub mod date;
 mod id_card;
 mod phone;
@@ -16,3 +17,4 @@ use crate::pick_one::pick_one;
 
 pub use crate::id_card::random_id_card;
 pub use crate::phone::random_phone;
+pub use color::{random_color, random_hex, random_hsl, random_hsla, random_rgb, random_rgba};
