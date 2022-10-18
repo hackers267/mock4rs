@@ -17,7 +17,6 @@ pub fn random_id_card() -> String {
     let prefix = "111111";
     let date = random_date_simple(DateType::Date);
     let third = random_string_by_len(CharType::Number, 3);
-    println!("third: {}", third);
     let other = format!("{}{}{}", prefix, date, third);
     let last = calc_code(&other);
     format!("{}{}{}{}", prefix, date, third, last)
