@@ -9,7 +9,7 @@ use crate::pick_one;
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_url;
+/// use mock4rs::web::random_url;
 /// let url = random_url();
 /// println!("url: {:?}",url);
 /// ```
@@ -33,7 +33,7 @@ fn random_string_simple() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_domain;
+/// use mock4rs::web::random_domain;
 /// let domain = random_domain();
 /// println!("domain: {}", domain);
 /// ```
@@ -54,7 +54,7 @@ const PROTOCOLS: [&str; 26] = [
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_protocol;
+/// use mock4rs::web::random_protocol;
 /// let protocol = random_protocol();
 /// println!("protocol: {}", protocol);
 /// ```
@@ -160,7 +160,7 @@ const TLDS: [&str; 90] = [
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_tld;
+/// use mock4rs::web::random_tld;
 /// let tld = random_tld();
 /// println!("tld: {}", tld);
 /// ```
@@ -173,7 +173,7 @@ pub fn random_tld() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_email;
+/// use mock4rs::web::random_email;
 /// let email = random_email();
 /// println!("email: {}", email);
 /// ```
@@ -188,7 +188,7 @@ pub fn random_email() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_ipv4;
+/// use mock4rs::web::random_ipv4;
 /// let ipv4 = random_ipv4();
 /// println!("ipv4: {}", ipv4);
 /// ```

@@ -7,7 +7,7 @@ use crate::base::{random_f32, random_u16_max, random_u16_simple, random_u8_max};
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_color;
+/// use mock4rs::color::random_color;
 /// let color = random_color();
 /// println!("color: {}", color);
 /// ```
@@ -24,7 +24,7 @@ pub fn random_color() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_hex;
+/// use mock4rs::color::random_hex;
 /// let color = random_hex();
 /// println!("color: {}", color);
 /// ```
@@ -37,7 +37,7 @@ pub fn random_hex() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_rgb;
+/// use mock4rs::color::random_rgb;
 /// let color = random_rgb();
 /// println!("color: {}", color);
 /// ```
@@ -53,7 +53,7 @@ pub fn random_rgb() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_rgba;
+/// use mock4rs::color::random_rgba;
 /// let color = random_rgba();
 /// println!("color: {}", color);
 /// ```
@@ -70,7 +70,7 @@ pub fn random_rgba() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_hsl;
+/// use mock4rs::color::random_hsl;
 /// let color = random_hsl();
 /// println!("color: {}", color);
 /// ```
@@ -86,7 +86,7 @@ pub fn random_hsl() -> String {
 ///
 /// # Example 示例
 /// ```
-/// use mock4rs::random_hsla;
+/// use mock4rs::color::random_hsla;
 /// let color = random_hsla();
 /// println!("color: {}", color);
 /// ```
