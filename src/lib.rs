@@ -8,6 +8,7 @@
 #![doc(html_no_source)]
 extern crate core;
 
+mod address;
 pub mod base;
 pub mod char;
 pub mod color;
