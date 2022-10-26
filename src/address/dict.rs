@@ -1,37 +1,5 @@
 use super::data::DICT;
 use crate::pick_one;
-use std::collections::binary_heap::Iter;
-use std::collections::HashMap;
-
-#[derive(Clone)]
-struct Item {
-    id: String,
-    pid: Option<String>,
-    value: String,
-    children: Option<Vec<HashMap<Option<String>, Item>>>,
-}
-fn get_tree() {
-    let dict = DICT.map(|(key, value)| {
-        let mut pid: Option<String> = None;
-        if key.ends_with("0000") {
-            pid = None;
-        } else if key.ends_with("00") {
-            pid = key.get(..2).map(|x| format!("{}0000", x));
-        } else {
-            pid = key.get(..4).map(|x| format!("{}0000", x));
-        }
-        Item {
-            id: key.to_string(),
-            pid,
-            value: value.to_string(),
-            children: None,
-        }
-    });
-    let mut hash_map = HashMap::new();
-    dict.iter().for_each(|x| {
-        hash_map.insert(x.clone().pid, x);
-    });
-}
 
 fn get_provinces() -> Vec<(&'static str, &'static str)> {
     DICT.into_iter()
@@ -39,7 +7,56 @@ fn get_provinces() -> Vec<(&'static str, &'static str)> {
         .collect::<Vec<(&str, &str)>>()
 }
 
-fn random_province() -> &'static str {
+fn get_cities() -> Vec<(&'static str, &'static str)> {
+    DICT.into_iter()
+        .filter(|(_address, code)| !code.ends_with("0000") && code.ends_with("00"))
+        .collect::<Vec<_>>()
+}
+
+fn get_counties() -> Vec<(&'static str, &'static str)> {
+    DICT.into_iter()
+        .filter(|(_address, code)| !code.ends_with("00"))
+        .collect::<_>()
+}
+
+/// Generate a random province.
+/// 随机生成一个省。
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::address::random_province;
+/// let  province = random_province();
+/// println!("province: {}", province);
+/// ```
+pub fn random_province() -> &'static str {
     let provinces = get_provinces();
     pick_one(&provinces).1
+}
+
+/// Generate a random city.
+/// 随机生成一个市。
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::address::random_city;
+/// let city = random_city();
+/// println!("city: {}", city);
+/// ```
+pub fn random_city() -> &'static str {
+    let cities = get_cities();
+    pick_one(&cities).1
+}
+
+/// Generate a random county.
+/// 随机生成一个县。
+///
+/// # Example 示例
+/// ```
+/// use mock4rs::address::random_county;
+/// let county = random_county();
+/// println!("county: {}", county);
+/// ```
+pub fn random_county() -> &'static str {
+    let counties = get_counties();
+    pick_one(&counties).1
 }
