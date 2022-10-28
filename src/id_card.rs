@@ -1,6 +1,8 @@
 use crate::base::random_string_by_len;
 use crate::char::CharType;
+use crate::data::DICT;
 use crate::date::{random_date_simple, DateType};
+use crate::pick_one::pick_one;
 
 ///
 ///  A random string generator a id_card;
@@ -14,12 +16,22 @@ use crate::date::{random_date_simple, DateType};
 ///  println!("id_card: {}", id_card);
 ///  ```
 pub fn random_id_card() -> String {
-    let prefix = "111111";
+    let prefix = get_prefix();
     let date = random_date_simple(DateType::Date);
     let third = random_string_by_len(CharType::Number, 3);
     let other = format!("{}{}{}", prefix, date, third);
     let last = calc_code(&other);
     format!("{}{}{}{}", prefix, date, third, last)
+}
+
+/// Random pick a code.
+/// 随机获取一个行政代码
+fn get_prefix() -> &'static str {
+    let list = DICT
+        .into_iter()
+        .map(|(code, _address)| code)
+        .collect::<Vec<&str>>();
+    pick_one(&list)
 }
 
 /// 计算身份证的校验位

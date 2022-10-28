@@ -12,6 +12,7 @@ pub mod address;
 pub mod base;
 pub mod char;
 pub mod color;
+mod data;
 pub mod date;
 mod id_card;
 pub mod name;

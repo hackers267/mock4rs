@@ -1,4 +1,4 @@
-use super::data::DICT;
+use crate::data::DICT;
 use crate::pick_one;
 
 fn get_provinces() -> Vec<(&'static str, &'static str)> {
